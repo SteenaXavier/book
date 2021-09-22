@@ -15,8 +15,8 @@ class Bookcard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 19, vertical: 10),
-      width: 200,
-      height: 200,
+      width: 300,
+      height: 300,
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(15),
