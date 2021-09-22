@@ -1,185 +1,11 @@
+import 'package:book/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
-        home: Scaffold(
-          body: ListView(
-            children: [
-              Head('English', 220),
-              Container(
-                  height: 210,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      RecipeCard(
-                        title: "LORD OF RING",
-                        cookTime: "20",
-                        rating: "2.5",
-                        image: "images/a.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20",
-                        rating: "2.5",
-                        image: "images/x.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20",
-                        rating: "2.5",
-                        image: "images/y.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/z.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/e.jpg",
-                      ),
-                    ],
-                  )),
-              Head('Malayalam', 185),
-              Container(
-                  height: 210,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      RecipeCard(
-                        title: "VILAYATHU BUDDHA",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/f.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/d.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/e.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/c.jpg",
-                      ),
-                    ],
-                  )),
-              Head('Hindi', 235),
-              Container(
-                  height: 210,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      RecipeCard(
-                        title: "GODAN",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/g.jpg",
-                      ),
-                      RecipeCard(
-                        title: "KARMA BHOOMI",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/h.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/i.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/j.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20",
-                        rating: "7.5",
-                        image: "images/y.jpg",
-                      ),
-                    ],
-                  )),
-              Head('Favourites', 188),
-              Container(
-                  height: 210,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "2.5",
-                        image: "images/y.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "3.5",
-                        image: "images/x.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20mint",
-                        rating: "4.5",
-                        image: "images/j.jpg",
-                      ),
-                      RecipeCard(
-                        title: "",
-                        cookTime: "20",
-                        rating: "2.5",
-                        image: "images/a.jpg",
-                      ),
-                    ],
-                  )),
-            ],
-            scrollDirection: Axis.vertical,
-          ),
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.chair,
-                  color: Colors.black,
-                ),
-                Text(
-                  'FURNITURAA',
-                  style: TextStyle(fontFamily: 'Sneha', color: Colors.black),
-                ),
-                Icon(
-                  Icons.chair,
-                  color: Colors.black,
-                ),
-                SizedBox(width: 13),
-                
-              ],
-            ),
-            centerTitle: true,
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.white,Colors.amber, Colors.white]),
-              ),
-            ),
-          ),
-          backgroundColor: Colors.white,
-        ),
         debugShowCheckedModeBanner: false,
+        home:Homepage()
+        
       ),
     );
 
@@ -217,14 +43,14 @@ class Head extends StatelessWidget {
   }
 }
 
-class RecipeCard extends StatelessWidget {
+class Bookcard extends StatelessWidget {
   final String title;
   final String rating;
-  final String cookTime;
+  final String author;
   final String image;
-  RecipeCard({
+  Bookcard({
     required this.title,
-    required this.cookTime,
+    required this.author,
     required this.rating,
     required this.image,
   });
@@ -312,7 +138,7 @@ class RecipeCard extends StatelessWidget {
                       
                       SizedBox(width: 2),
                       Text(
-                        cookTime,
+                        author,
                         style: TextStyle(color: Colors.white),
                       ),
                     ],
