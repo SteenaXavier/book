@@ -3,12 +3,14 @@ class Book {
   final String image;
   final String author;
   final String rating;
+  
 
   Book({
     required this.author,
     required this.image,
     required this.title,
     required this.rating,
+    
   });
 
   factory Book.fromJson(dynamic json) {
@@ -16,6 +18,7 @@ class Book {
       author: json['authors'][0] as String,
       image: json['imageLinks']["thumbnail"] as String,
       title: json['title'] as String,
+
       rating: json['averageRating'].toString() as String,
     );
   }

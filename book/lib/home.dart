@@ -33,7 +33,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       body: ListView(
         children: [
-          Head('English', 220),
+          Head('Cat', 220),
           Container(
               height: 210,
               child: isloading
@@ -48,7 +48,7 @@ class _HomepageState extends State<Homepage> {
                             rating: books[index].rating,
                             image: books[index].image);
                       })),
-          Head('Malayalam', 185),
+          Head('Dog', 185),
           Container(
               height: 210,
               child: isloading
@@ -63,7 +63,7 @@ class _HomepageState extends State<Homepage> {
                             rating: books[index].rating,
                             image: books[index].image);
                       })),
-          Head('Hindi', 235),
+          Head('flowers', 235),
           Container(
               height: 210,
               child: isloading
