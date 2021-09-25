@@ -2,7 +2,6 @@ import 'package:book/book.dart';
 import 'package:book/bookapi.dart';
 import 'package:book/widgets/head.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
 import 'widgets/bookCard.dart';
 
 class Homepage extends StatefulWidget {
@@ -13,10 +12,21 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  List<Book> books = [];
+  List<Book> dogbooks = [];
+   List<Book> catbooks = [];
+  List<Book> flowerbooks = [];
+  List<Book> mountainsbooks = [];
   bool isloading = true;
   Future<void> getbook() async {
-    books = await Bookapi.getdetails();
+    dogbooks = await Bookapi.getdetails("dogs");
+    print("dog");
+    catbooks = await Bookapi.getdetails("cats");
+    print("do");
+    flowerbooks =await Bookapi.getdetails("cats");
+    print("d");
+    mountainsbooks = await Bookapi.getdetails("dogs");
+    print("dor");
+
     setState(() {
       isloading = false;
     });
@@ -40,13 +50,15 @@ class _HomepageState extends State<Homepage> {
                   ? Center(child: CircularProgressIndicator())
                   : ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: books.length,
+                      itemCount: catbooks.length,
                       itemBuilder: (context, index) {
                         return Bookcard(
-                            title: books[index].title,
-                            author: books[index].author,
-                            rating: books[index].rating,
-                            image: books[index].image);
+                            
+                            title: catbooks[index].title,
+                            author: catbooks[index].author,
+                            rating: catbooks[index].rating,
+                             review:catbooks[index].review, 
+                            image: catbooks[index].image);
                       })),
           Head('Dog', 185),
           Container(
@@ -55,13 +67,14 @@ class _HomepageState extends State<Homepage> {
                   ? Center(child: CircularProgressIndicator())
                   : ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: books.length,
+                      itemCount: dogbooks.length,
                       itemBuilder: (context, index) {
                         return Bookcard(
-                            title: books[index].title,
-                            author: books[index].author,
-                            rating: books[index].rating,
-                            image: books[index].image);
+                            title: dogbooks[index].title,
+                            author: dogbooks[index].author,
+                            rating: dogbooks[index].rating,
+                            review:dogbooks[index].review, 
+                            image: dogbooks[index].image);
                       })),
           Head('flowers', 235),
           Container(
@@ -70,13 +83,14 @@ class _HomepageState extends State<Homepage> {
                   ? Center(child: CircularProgressIndicator())
                   : ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: books.length,
+                      itemCount: flowerbooks.length,
                       itemBuilder: (context, index) {
                         return Bookcard(
-                            title: books[index].title,
-                            author: books[index].author,
-                            rating: books[index].rating,
-                            image: books[index].image);
+                            title: flowerbooks[index].title,
+                            author: flowerbooks[index].author,
+                            rating: flowerbooks[index].rating,
+                             review:flowerbooks[index].review, 
+                            image: flowerbooks[index].image);
                       })),
           Head('Favourites', 188),
           Container(
@@ -85,13 +99,14 @@ class _HomepageState extends State<Homepage> {
                   ? Center(child: CircularProgressIndicator())
                   : ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: books.length,
+                      itemCount: mountainsbooks.length,
                       itemBuilder: (context, index) {
                         return Bookcard(
-                            title: books[index].title,
-                            author: books[index].author,
-                            rating: books[index].rating,
-                            image: books[index].image);
+                            title: mountainsbooks[index].title,
+                            author: mountainsbooks[index].author,
+                            rating: mountainsbooks[index].rating,
+                            review:mountainsbooks[index].review, 
+                            image: mountainsbooks[index].image);
                       })),
         ],
         scrollDirection: Axis.vertical,

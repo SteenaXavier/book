@@ -1,7 +1,5 @@
-import 'dart:js';
 
 import 'package:flutter/material.dart';
-
 import '../review.dart';
 
 class Bookcard extends StatelessWidget {
@@ -9,12 +7,14 @@ class Bookcard extends StatelessWidget {
   final String rating;
   final String author;
   final String image;
+  final String review;
   
   Bookcard({
     required this.title,
     required this.author,
     required this.rating,
     required this.image,
+    required this.review,
   });
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class Bookcard extends StatelessWidget {
       onTap: (){
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => ReviewPage(),
+    MaterialPageRoute(builder: (context) => ReviewPage(title:title ,author:author,image: image,review: review,),
   ));
 },
       child: Container(
