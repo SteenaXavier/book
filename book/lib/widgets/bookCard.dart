@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../review.dart';
 
 class Bookcard extends StatelessWidget {
@@ -8,7 +8,7 @@ class Bookcard extends StatelessWidget {
   final String author;
   final String image;
   final String review;
-  
+
   Bookcard({
     required this.title,
     required this.author,
@@ -19,12 +19,18 @@ class Bookcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => ReviewPage(title:title ,author:author,image: image,review: review,),
-  ));
-},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ReviewPage(
+                title: title,
+                author: author,
+                image: image,
+                review: review,
+              ),
+            ));
+      },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 19, vertical: 10),
         width: 300,
@@ -59,8 +65,12 @@ class Bookcard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 5.0),
                 child: Text(
                   title,
-                  style: TextStyle(
-                      color: Colors.white, fontSize: 14, fontFamily: "sneha"),
+                  style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
+                  ),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   textAlign: TextAlign.center,
@@ -89,7 +99,12 @@ class Bookcard extends StatelessWidget {
                         SizedBox(width: 7),
                         Text(
                           rating,
-                          style: TextStyle(color: Colors.white),
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -103,7 +118,6 @@ class Bookcard extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                      
                         SizedBox(width: 2),
                         Icon(
                           Icons.person,
@@ -112,7 +126,12 @@ class Bookcard extends StatelessWidget {
                         ),
                         Text(
                           author,
-                          style: TextStyle(color: Colors.white),
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ],
                     ),
