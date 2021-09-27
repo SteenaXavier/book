@@ -19,13 +19,13 @@ class _HomepageState extends State<Homepage> {
   bool isloading = true;
   Future<void> getbook() async {
     dogbooks = await Bookapi.getdetails("dogs");
-    print("dog");
+   
     catbooks = await Bookapi.getdetails("cats");
-    print("do");
-    flowerbooks = await Bookapi.getdetails("cats");
-    print("d");
+ 
+    flowerbooks = await Bookapi.getdetails("river");
+   
     mountainsbooks = await Bookapi.getdetails("dogs");
-    print("dor");
+   
 
     setState(
       () {
